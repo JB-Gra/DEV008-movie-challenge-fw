@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export function useFetch(url) {
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
@@ -12,5 +12,6 @@ export function useFetch(url) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log(movie);
   return { movie, loading };
 }
