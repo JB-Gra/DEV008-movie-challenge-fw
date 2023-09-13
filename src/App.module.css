@@ -24,7 +24,7 @@
 }
 
 .logo {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .heroContainer {
@@ -34,7 +34,6 @@
   flex-wrap: wrap;
   margin: 1.8rem auto;
   padding: 1rem 0;
-  border-top: solid 3px #ff009e;
   border-bottom: solid 3px #ff009e;
 }
 
@@ -47,14 +46,33 @@
   width: 240px;
 }
 
+.footer {
+  width: 100%;
+  background-color: #ffe521;
+  padding: 1rem;
+}
+
+.paraFooter {
+  text-align: center;
+}
+
 @media only screen and (max-width: 720px) {
+  .logo {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .heroContainer {
+    margin-top: 0.4rem;
+  }
+
   .heroText {
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .heroImg {
     margin-top: 1.2rem;
-    width: 260px;
+    width: 220px;
   }
 }

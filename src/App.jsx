@@ -2,6 +2,7 @@ import { useFetch } from './useFetch'
 import styles from './App.module.css'
 import Header from './components/Header.jsx'
 import Intro from './components/Intro';
+import Footer from './components/Footer';
 
 function App() {
   const url = 'https://www.omdbapi.com/?';
@@ -22,6 +23,7 @@ function App() {
             )
           })}
         </section>
+        <Footer />
       </div>
     </>
   )
