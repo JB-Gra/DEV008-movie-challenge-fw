@@ -1,28 +1,18 @@
-import { useFetch } from './useFetch'
 import styles from './App.module.css'
 import Header from './components/Header.jsx'
 import Intro from './components/Intro';
+import MovieSection01 from './components/MovieSection01';
+import MovieSection02 from './components/MovieSection02';
 import Footer from './components/Footer';
 
 function App() {
-  const url = 'https://www.omdbapi.com/?';
-  const apiKey = 'apikey=b1b63af5';
-
-  const { movie, loading } = useFetch(url + apiKey + '&s=wedding&page=1');
-
   return (
     <>
       <div className={`${styles.pageContainer} ${styles.flex}`}>
         <Header />
         <Intro />
-        <section>
-          {loading && <p>Loading...</p>}
-          {movie.map((film) => {
-            return (
-            <img key={film.imdbID} src={film.Poster} />
-            )
-          })}
-        </section>
+        <MovieSection01 />
+        <MovieSection02 />
         <Footer />
       </div>
     </>

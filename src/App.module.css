@@ -5,26 +5,62 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Cabin', sans-serif;
 }
 
 .flex {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .pageContainer {
-  font-family: 'Cabin', sans-serif;
+  height: 100dvh;
   flex-flow: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header {
   width: 100%;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
   background-color: #ffe521;
   padding: 0.8rem 1.4rem;
 }
 
 .logo {
   font-size: 2rem;
+}
+
+.searchBar,
+.searchBtn {
+  border-radius: 11px;
+  border: solid 2px #000;
+  padding: 0.3rem 0.5rem;
+  background-color: #ffe521;
+}
+
+.searchBar {
+  width: 16rem;
+}
+
+.searchBar:focus {
+  background-color: #fff;
+}
+
+.searchBtn {
+  margin-left: 0.4rem;
+  font-weight: 600;
+}
+
+.searchBtn:hover {
+  background-color: #000;
+  color: #ffe521;
+  cursor: pointer;
 }
 
 .heroContainer {
@@ -34,7 +70,6 @@
   flex-wrap: wrap;
   margin: 1.8rem auto;
   padding: 1rem 0;
-  border-bottom: solid 3px #ff009e;
 }
 
 .heroText {
@@ -44,6 +79,50 @@
 
 .heroImg {
   width: 240px;
+}
+
+.sectionContainer {
+  width: 80%;
+  flex-flow: column;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 5px solid #000;
+}
+
+.movieList {
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 18%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+}
+
+.posterImg {
+  width: 240px;
+  height: 360px;
+}
+
+.movieTitle {
+  width: 240px;
+  font-size: 1.5rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.movieDetail > .movieTitle {
+  border-bottom: 0px solid #ff009e;
+  transition: border-bottom 300ms ease-out;
+}
+
+.movieDetail:hover > .movieTitle {
+  border-bottom: 3px solid #ff009e;
+  transition: border-bottom 300ms ease-in;
 }
 
 .footer {
@@ -56,10 +135,33 @@
   text-align: center;
 }
 
+@media only screen and (max-width: 1600px) {
+  .movieList {
+    grid-auto-columns: 25%;
+  }
+}
+
 @media only screen and (max-width: 720px) {
+  .header {
+    flex-flow: column;
+  }
+
   .logo {
     text-align: center;
     font-size: 1.8rem;
+  }
+
+  .searchContainer {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .searchBar {
+    margin-top: 0.6rem;
+  }
+
+  .searchBtn {
+    margin-top: 0.6rem;
   }
 
   .heroContainer {
@@ -74,5 +176,14 @@
   .heroImg {
     margin-top: 1.2rem;
     width: 220px;
+  }
+
+  .movieList {
+    gap: 1rem;
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
   }
 }
