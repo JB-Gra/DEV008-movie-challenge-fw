@@ -1,22 +1,26 @@
+/* eslint-disable react/prop-types */
 import styles from '../App.module.css'
 import { useFetch } from '../useFetch';
 
-function MovieSection01() {
+function MovieSection(props) {
+  const movieTitle = props.title;
+  const searchTitle = props.search;
+  
   const url = 'https://www.omdbapi.com/?';
   const apiKey = 'apikey=b1b63af5';
 
-  const { movie, loading } = useFetch(url + apiKey + '&s=wedding&page=1');
+  const { movie, loading } = useFetch(url + apiKey + '&s=' + searchTitle);
 
   return (
   <section className={`${styles.sectionContainer} ${styles.flex}`}>
-    <h2 className={styles.sectionTitle}>¡Toma ideas para tu boda!</h2>
+    <h2 className={styles.sectionTitle}>{movieTitle}</h2>
     {loading && <p>Loading...</p>}
     <div className={`${styles.movieList} ${styles.grid}`}>
     {movie.map((film) => {
       return (
       <div key={film.imdbID} className={styles.movieDetail}>
         <img src={film.Poster} className={styles.posterImg} />
-        <p className={styles.movieTitle}>{film.Title}</p>
+        <p className={`${styles.movieTitle} ${styles.animatedUnderline}`}>{film.Title}</p>
       </div>
       )
     })}
@@ -25,4 +29,4 @@ function MovieSection01() {
   )
 }
 
-export default MovieSection01
+export default MovieSection

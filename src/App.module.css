@@ -45,7 +45,11 @@
 }
 
 .searchBar {
-  width: 16rem;
+  width: 18rem;
+}
+
+.searchBar::placeholder {
+  font-style: italic;
 }
 
 .searchBar:focus {
@@ -110,19 +114,35 @@
 
 .movieTitle {
   width: 240px;
+  position: relative;
   font-size: 1.5rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.6rem;
   margin-bottom: 1rem;
+  --border-size: 4px;
 }
 
-.movieDetail > .movieTitle {
-  border-bottom: 0px solid #ff009e;
-  transition: border-bottom 300ms ease-out;
+.movieDetail > 
+.movieTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: var(--border-size);
+  background-color: #ff009e;
+  transition: width 0.3s ease;
 }
 
-.movieDetail:hover > .movieTitle {
-  border-bottom: 3px solid #ff009e;
-  transition: border-bottom 300ms ease-in;
+.movieDetail:hover >
+.movieTitle::before,
+.movieDetail:focus >
+.movieTitle::before {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.movieDetail:hover {
+  cursor: pointer;
 }
 
 .footer {
@@ -138,6 +158,12 @@
 @media only screen and (max-width: 1600px) {
   .movieList {
     grid-auto-columns: 25%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .movieList {
+    grid-auto-columns: 35%;
   }
 }
 
