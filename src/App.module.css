@@ -50,10 +50,15 @@
 
 .searchBar::placeholder {
   font-style: italic;
+  color: #7a6e10;
 }
 
 .searchBar:focus {
   background-color: #fff;
+}
+
+.searchBar:focus::placeholder {
+  color: #7f7f7f;
 }
 
 .searchBtn {

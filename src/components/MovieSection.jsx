@@ -9,11 +9,12 @@ function MovieSection(props) {
   const url = 'https://www.omdbapi.com/?';
   const apiKey = 'apikey=b1b63af5';
 
-  const { movie, loading } = useFetch(url + apiKey + '&s=' + searchTitle);
+  const { movie, loading, error } = useFetch(url + apiKey + '&s=' + searchTitle);
 
   return (
   <section className={`${styles.sectionContainer} ${styles.flex}`}>
     <h2 className={styles.sectionTitle}>{movieTitle}</h2>
+    {error && <p>Error: {error}</p>}
     {loading && <p>Loading...</p>}
     <div className={`${styles.movieList} ${styles.grid}`}>
     {movie.map((film) => {
