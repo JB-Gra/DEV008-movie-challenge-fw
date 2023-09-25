@@ -14,6 +14,5 @@ export function useFetch(url) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(movie);
   return { movie, loading, error};
 }

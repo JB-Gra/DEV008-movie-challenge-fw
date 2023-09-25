@@ -36,21 +36,35 @@
   font-size: 2rem;
 }
 
+.searchContainer {
+  width: 80%;
+  flex-flow: column;
+  align-items: center;
+  margin: 4rem 0;
+}
+
+.inputLabel {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
 .searchBar,
 .searchBtn {
+  height: 3rem;
   border-radius: 11px;
   border: solid 2px #000;
   padding: 0.3rem 0.5rem;
-  background-color: #ffe521;
+  font-size: 1.2rem;
 }
 
 .searchBar {
-  width: 18rem;
+  width: 24rem;
+  background-color: transparent;
 }
 
 .searchBar::placeholder {
   font-style: italic;
-  color: #7a6e10;
+  color: #6d6d6d;
 }
 
 .searchBar:focus {
@@ -64,6 +78,7 @@
 .searchBtn {
   margin-left: 0.4rem;
   font-weight: 600;
+  background-color: #ffe521;
 }
 
 .searchBtn:hover {
@@ -88,6 +103,12 @@
 
 .heroImg {
   width: 240px;
+}
+
+.movieContainer {
+  width: 100%;
+  flex-flow: column;
+  align-items: center;
 }
 
 .sectionContainer {
@@ -182,12 +203,23 @@
     font-size: 1.8rem;
   }
 
+  .inputLabel {
+    font-size: 1.4rem;
+  }
+
   .searchContainer {
-    flex-flow: column;
-    align-items: center;
+    text-align: center;
+    margin: 1.8rem 0;
+  }
+
+  .searchBar,
+  .searchBtn {
+    height: 2.4rem;
+    font-size: 1rem;
   }
 
   .searchBar {
+    width: 20rem;
     margin-top: 0.6rem;
   }
 

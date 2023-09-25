@@ -1,7 +1,6 @@
 import styles from './App.module.css'
 import Header from './components/Header.jsx'
-import Intro from './components/Intro';
-import MovieSection from './components/MovieSection';
+import PageContainer from './components/PageContainer';
 import Footer from './components/Footer';
 
 function App() {
@@ -9,10 +8,7 @@ function App() {
     <>
       <div className={`${styles.pageContainer} ${styles.flex}`}>
         <Header />
-        <Intro />
-        <MovieSection title={'¡Toma ideas para tu boda!'} search={'wedding'} />
-        <MovieSection title={'Temporada spooky 🎃'} search={'halloween'} />
-        <MovieSection title={'Adrenalina pura'} search={'furious'} />
+        <PageContainer />
         <Footer />
       </div>
     </>
