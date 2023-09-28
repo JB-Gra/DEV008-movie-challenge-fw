@@ -87,6 +87,12 @@
   cursor: pointer;
 }
 
+.searchResultsContainer {
+  width: 100%;
+  flex-flow: column;
+  margin-top: 2rem;
+}
+
 .heroContainer {
   width: 80%;
   align-items: center;

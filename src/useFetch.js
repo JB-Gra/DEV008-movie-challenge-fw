@@ -9,7 +9,7 @@ export function useFetch(url) {
     fetch(url)
       .then((response) => response.json())
       .then((movie) => setMovie(movie.Search))
-      .catch((error) => setError(error))
+      .catch((error) => setError('Error al hacer fetch a movie:', error))
       .finally(() => setLoading(false))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
