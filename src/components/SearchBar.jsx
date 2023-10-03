@@ -11,7 +11,7 @@ function SearchBar() {
   const apiKey = 'b1b63af5'; // Replace with your actual OMDB API key
 
   const searchMovies = () => {
-    fetch(`http://www.omdbapi.com/?s=${query}&apikey=${apiKey}`)
+    fetch(`https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.Search) {
